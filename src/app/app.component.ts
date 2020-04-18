@@ -53,7 +53,7 @@ export class AppComponent {
                     playerList.push(player);
                     localStorage.setItem('players', JSON.stringify(playerList));
                 }
-            }, 200);
+            }, 1000);
         }
         this.initClicker = false;
     }
