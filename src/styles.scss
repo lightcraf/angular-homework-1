@@ -458,3 +458,20 @@ body {
     background-color: #2F3238;
     color: #fff;
 }
+
+.link {
+    font-size: 16px;
+    color: #ff8c00;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+        color: #ffc923;
+        text-decoration: underline;
+    }
+}
+
+.link--large {
+    font-size: 20px;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,31 @@
+<div class="game-control-wrapper">
+  <ng-container *ngIf="isCountDownDone">
+    <p class="count">Player <span class="text-green">{{username}}</span>: {{count}} clicks</p>
+    <button class="restart-btn" (click)="playAgain()">Play again</button>
+  </ng-container>
+  <ng-container *ngIf="!isCountDownDone">
+    <p class="count">Count: {{count}}</p>
+    <button class="start-btn" (click)="startCount()">{{initClicker ? 'Start' : duration}}</button>
+  </ng-container>
+  <a routerLink="/records" class="link link--large">View top players</a>
+</div>
+
+<div class="settings-wrapper">
+  <button class="settings-btn" 
+    [ngClass]="{'plus': !isSettingsVisible, 'minus': isSettingsVisible}"
+    (click)="toggleSettings()">Settings</button>
+
+  <form [ngClass]="{'settings-form': true, 'active': isSettingsVisible}" 
+    [formGroup]="settingsForm" 
+    (change)="submitSettingsForm()">
+    <label for="duration">Duration:</label>
+    <select class="settings-form__select" id="duration" name="duration" formControlName="duration">
+      <option value="10">10 seconds</option>
+      <option value="20">20 seconds</option>
+      <option value="30">30 seconds</option>
+      <option value="40">40 seconds</option>
+      <option value="50">50 seconds</option>
+      <option value="60">60 seconds</option>
+    </select>
+  </form>
+</div>

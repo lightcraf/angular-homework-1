@@ -1,0 +1,27 @@
+<div class="records-wrapper">
+  <a routerLink="/play" class="link">Play</a>
+
+  <table class="records-table" *ngIf="players.length !== 0; else elseBlock">
+    <caption class="records-table__title">Top 10 players</caption>
+    <tr>
+      <th class="records-table__head">Rank</th>
+      <th class="records-table__head">Player</th>
+      <th class="records-table__head">Score</th>
+      <th class="records-table__head">Duration</th>
+      <th class="records-table__head">Clicks per second</th>
+    </tr>
+    <tbody>
+      <ng-container *ngFor="let player of players; index as i">
+        <tr>
+          <td class="records-table__cell">{{i + 1}}</td>
+          <td class="records-table__cell">{{player.player}}</td>
+          <td class="records-table__cell">{{player.count}}</td>
+          <td class="records-table__cell">{{player.duration}}</td>
+          <td class="records-table__cell">{{player.clicksPerSecond}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <ng-template #elseBlock><p>No records found.</p></ng-template>
+</div>

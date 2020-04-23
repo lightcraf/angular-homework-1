@@ -1,0 +1,5 @@
+<form class="login-form" [formGroup]="profileForm" (ngSubmit)="submitProfileForm()">
+  <label class="form-lable" for="username">Hello user, what's your name?</label>
+  <input class="form-control" type="text" id="username" formControlName="username">
+  <button class="form-btn" type="submit" [disabled]="!profileForm.valid">Continue</button>
+</form>

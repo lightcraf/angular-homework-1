@@ -1,0 +1,29 @@
+.records-wrapper {
+  max-width: 960px;
+  margin: 35px auto 0;
+  overflow-x: auto;
+}
+
+.records-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 20px;
+
+  &__title {
+    padding-bottom: 8px;
+  }
+
+  &__head {
+    background-color: #228e22;
+    border: 1px solid #228e22;
+    padding: 6px;
+  }
+    
+  &__cell {
+    text-align: center;
+    border: 1px solid #b0b0b0;
+    padding: 6px;
+  }
+}
