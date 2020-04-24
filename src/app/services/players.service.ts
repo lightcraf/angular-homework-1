@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import IPlayers from '../IPlayers';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class PlayersService {
   constructor() { }
 
-  getPlayers(): any[] {
+  getPlayers(): IPlayers[] {
     const playerList = JSON.parse(localStorage.getItem('players')) || [];
     return playerList.sort(this.compareValues('clicksPerSecond')).slice(0, 10);
   }
@@ -18,7 +19,7 @@ export class PlayersService {
   }
 
   compareValues(propertyName) {
-    return function (object1, object2) {
+    return function (object1: IPlayers, object2: IPlayers): number {
       const value1 = (typeof object1[propertyName] === 'string') ? object1[propertyName].toUpperCase() : object1[propertyName];
       const value2 = (typeof object2[propertyName] === 'string') ? object2[propertyName].toUpperCase() : object2[propertyName];
 

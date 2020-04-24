@@ -47,7 +47,7 @@ export class PlayComponent implements OnInit {
             player: this.username,
             count: this.count,
             duration: parseInt(this.settingsForm.value.duration) || 10,
-            clicksPerSecond: (this.count / (parseInt(this.settingsForm.value.duration) || 10)).toFixed(3)
+            clicksPerSecond: Number((this.count / (parseInt(this.settingsForm.value.duration) || 10)).toFixed(3))
           };
 
           this.playersService.setPlayers(player);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../services/players.service';
+import IPlayers from '../IPlayers';
 
 @Component({
   selector: 'app-records',
@@ -7,7 +8,7 @@ import { PlayersService } from '../services/players.service';
   styleUrls: ['./records.component.scss']
 })
 export class RecordsComponent implements OnInit {
-  players: any[];
+  players: IPlayers[];
 
   constructor(
     private playersService: PlayersService
